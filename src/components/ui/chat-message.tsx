@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/hooks/use-theme";
 
 interface ChatMessageProps {
   message: string;
@@ -6,6 +7,8 @@ interface ChatMessageProps {
 }
 
 export function ChatMessage({ message, isUser }: ChatMessageProps) {
+  const { theme } = useTheme();
+
   return (
     <div
       className={cn(
@@ -15,10 +18,14 @@ export function ChatMessage({ message, isUser }: ChatMessageProps) {
     >
       <div
         className={cn(
-          "max-w-[80%] px-6 py-4 rounded-3xl text-white text-lg shadow-message-glow",
+          "max-w-[80%] px-6 py-4 rounded-3xl text-white text-lg theme-message-glow",
           isUser
-            ? "bg-message-user border-glow-cyan rounded-bl-lg"
-            : "bg-message-assistant border-glow-purple rounded-br-lg",
+            ? "theme-message-user rounded-bl-lg"
+            : "theme-message-assistant rounded-br-lg",
+          // Glassmorphism specific styling
+          theme === "glassmorphism" && "glass-message backdrop-blur-md",
+          // Cyberpunk specific styling
+          theme === "cyberpunk" && "border border-current/30",
         )}
       >
         {message}

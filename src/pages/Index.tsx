@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { ChatMessage } from "@/components/ui/chat-message";
 import { ChatInput } from "@/components/ui/chat-input";
+import { ThemeSwitcher } from "@/components/ui/theme-switcher";
+import { useTheme } from "@/hooks/use-theme";
+import { cn } from "@/lib/utils";
 
 interface Message {
   id: number;
@@ -9,6 +12,7 @@ interface Message {
 }
 
 const Index = () => {
+  const { theme } = useTheme();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -42,13 +46,27 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-trushna-gradient flex flex-col">
+    <div
+      className={cn(
+        "min-h-screen theme-bg flex flex-col relative",
+        // Glassmorphism needs special background
+        theme === "glassmorphism" && "glass-effect",
+      )}
+    >
+      {/* Theme Switcher */}
+      <ThemeSwitcher />
+
       {/* Header with TRUSHNA branding */}
       <div className="flex-shrink-0 pt-16 pb-12 text-center">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-glow-cyan-intense animate-glow-pulse mb-4 tracking-wider">
+        <h1
+          className={cn(
+            "text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-wider theme-title",
+            theme === "cyberpunk" && "animate-cyberpunk-flicker",
+          )}
+        >
           TRUSHNA
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide">
+        <p className="text-xl md:text-2xl font-light tracking-wide theme-subtitle">
           A VIRTUAL ASSISTANT
         </p>
       </div>
@@ -74,12 +92,12 @@ const Index = () => {
 
       {/* Footer */}
       <div className="flex-shrink-0 pb-8 text-center">
-        <p className="text-gray-300 text-base md:text-lg font-medium tracking-wider leading-relaxed">
-          <span className="text-cyan-400">DEVELOPED BY</span>
+        <p className="text-base md:text-lg font-medium tracking-wider leading-relaxed">
+          <span className="theme-footer-primary">DEVELOPED BY</span>
           <br />
-          <span className="text-white font-semibold">TRUSHNA</span>
-          <span className="text-gray-400 mx-2">AND</span>
-          <span className="text-white font-semibold">YOGENDRA</span>
+          <span className="theme-footer-secondary font-semibold">TRUSHNA</span>
+          <span className="theme-footer-tertiary mx-2">AND</span>
+          <span className="theme-footer-secondary font-semibold">YOGENDRA</span>
         </p>
       </div>
     </div>

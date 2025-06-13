@@ -62,46 +62,41 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom colors for TRUSHNA design
-        trushna: {
-          navy: "#0A0E27",
-          "navy-light": "#1A1F3E",
-          purple: "#2D1B4E",
-          cyan: "#00FFFF",
-          "cyan-bright": "#4DFFFF",
-          "blue-glow": "#1E90FF",
-          "purple-glow": "#8A2BE2",
-        },
       },
       backgroundImage: {
-        "trushna-gradient":
-          "linear-gradient(135deg, #0A0E27 0%, #1A1F3E 50%, #2D1B4E 100%)",
-        "message-user": "linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%)",
-        "message-assistant":
-          "linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)",
-        "input-gradient": "linear-gradient(135deg, #1E40AF 0%, #7C3AED 100%)",
+        // Theme-specific gradients
+        "theme-gradient": "var(--theme-gradient)",
+        "message-user": "var(--message-user-gradient)",
+        "message-assistant": "var(--message-assistant-gradient)",
+        "input-gradient": "var(--input-gradient)",
+
+        // Glass patterns
+        "glass-pattern":
+          "radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%)",
       },
       boxShadow: {
-        "glow-cyan":
-          "0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3)",
-        "glow-blue": "0 0 20px rgba(30, 144, 255, 0.5)",
-        "glow-purple": "0 0 20px rgba(138, 43, 226, 0.5)",
-        "message-glow": "0 4px 20px rgba(0, 0, 0, 0.3)",
+        "theme-glow": "var(--theme-glow)",
+        "message-glow": "var(--message-glow)",
+        glass: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+        "glass-inset": "inset 0 1px 0 0 rgba(255, 255, 255, 0.05)",
+      },
+      backdropBlur: {
+        xs: "2px",
       },
       animation: {
-        "glow-pulse": "glow-pulse 2s ease-in-out infinite alternate",
+        "theme-pulse": "var(--theme-animation)",
+        "cyberpunk-flicker":
+          "cyberpunk-flicker 2s ease-in-out infinite alternate",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
-        "glow-pulse": {
-          "0%": {
-            textShadow:
-              "0 0 5px rgba(0, 180, 255, 0.5), 0 0 10px rgba(0, 180, 255, 0.5), 0 0 15px rgba(0, 180, 255, 0.5)",
+        "cyberpunk-flicker": {
+          "0%, 100%": {
+            textShadow: "var(--cyberpunk-text-shadow-1)",
           },
-          "100%": {
-            textShadow:
-              "0 0 10px rgba(0, 180, 255, 0.8), 0 0 20px rgba(0, 180, 255, 0.8), 0 0 30px rgba(0, 180, 255, 0.8)",
+          "50%": {
+            textShadow: "var(--cyberpunk-text-shadow-2)",
           },
         },
         "accordion-down": {
