@@ -74,10 +74,12 @@ const Index = () => {
 
       {/* Footer */}
       <div className="flex-shrink-0 pb-8 text-center">
-        <p className="text-gray-500 text-sm md:text-base tracking-wide">
-          DEVELOPED BY TRUSHNA
+        <p className="text-gray-300 text-base md:text-lg font-medium tracking-wider leading-relaxed">
+          <span className="text-cyan-400">DEVELOPED BY</span>
           <br />
-          AND YOGENDRA
+          <span className="text-white font-semibold">TRUSHNA</span>
+          <span className="text-gray-400 mx-2">AND</span>
+          <span className="text-white font-semibold">YOGENDRA</span>
         </p>
       </div>
     </div>
