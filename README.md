@@ -1,6 +1,6 @@
 # Builder Pulse Hub
 
-
+[![DevOps Guru](https://img.shields.io/badge/DevOps-Guru-blue?style=for-the-badge&logo=devops&logoColor=white)](https://github.com/yogendra-27-bhange)
 
 A modern React application built with TypeScript, Vite, and Tailwind CSS.
 
@@ -69,8 +69,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Live Demo](https://your-demo-link.com)
 - [Documentation](https://your-docs-link.com)
-- [Issues](https://github.com/yourusername/Builder-pulse-hub/issues)
+- [Issues](https://github.com/yogendra-27-bhange/Builder-pulse-hub/issues)
 
 ---
 
-⭐ Star this repository if you found it helpful! 
+⭐ Star this repository if you found it helpful!
